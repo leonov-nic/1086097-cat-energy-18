@@ -127,7 +127,7 @@
 @media (min-width: @desktop-width) {
   .food {
     background-image: none;
-    max-width: @desktop-width;
+    // max-width: @desktop-width;
 
     flex-direction: row;
     justify-content: flex-start;
@@ -143,8 +143,10 @@
       width: 700px;
       height: 696px;
 
-      background-color: @green;
+      background-image: linear-gradient(to right, transparent 50%, @green 50%);
+      background-position: 60px top;
       background-image: url("../img/index-background-desktop@1x.jpg");
+      background-position: 60px top;
       background-repeat: no-repeat;
       background-size: cover;
     }
