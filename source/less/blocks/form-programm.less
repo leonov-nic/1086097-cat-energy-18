@@ -45,7 +45,7 @@
 .form-programm__area[placeholder]:focus:invalid {
   border: 1px solid #ff8282;
 
-  box-shadow: 0 0 0 1px #ff8282, 0 0 6px 4px lightblue;
+  box-shadow: 0 0 0 1px #ff8282;
   transition: all 0.2s ease-in-out;
 }
 
@@ -57,6 +57,12 @@
   box-shadow: 0 0 0 1px @gray;
 
   color: @gray;
+}
+
+.form-programm__input:focus:hover {
+  border: 1px solid @gray;
+
+  box-shadow: 0 0 0 1px @gray;
 }
 
 .form-programm__field {
@@ -161,9 +167,7 @@
 
     border-radius: 50%;
 
-    border: 1px solid @lightgray;
-
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    border: 1px solid @lightgray2;
   }
 
   &::before {
@@ -184,9 +188,7 @@
 
 .form-programm__radio-indicator:hover {
   &::after {
-    border: 1px solid @lightgray2;
-
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
+    border: 1px solid @lightgray3;
   }
 }
 
@@ -207,12 +209,6 @@
 
   &::after {
     border: 2px solid blue;
-  }
-}
-
-.form-programm__select input[type="radio"]:focus + .form-programm__radio-indicator {
-  &::after {
-    box-shadow: 0 0 5px 3px lightblue;
   }
 }
 
@@ -355,7 +351,7 @@
   width: 100%;
 }
 
-.form-programm__flex--add {
+.form-programm__field--add {
   position: relative;
 
   display: flex;
@@ -375,7 +371,7 @@
   padding-right: 20px;
 }
 
-.form-programm__flex--add .form-programm__heading {
+.form-programm__field--add .form-programm__heading {
   position: relative;
 
   width: calc(100% - 40px);
@@ -430,9 +426,7 @@
     width: 29px;
     height: 29px;
 
-    border: 1px solid @lightgray;
-
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    border: 1px solid @lightgray2;
 
     background-color: @white;
   }
@@ -440,9 +434,7 @@
 
 .form-programm__add .form-programm__checkbox-indicator:hover {
   &::after {
-    border: 1px solid @lightgray2;
-
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
+    border: 1px solid @lightgray3;
   }
 }
 
@@ -463,12 +455,6 @@
     height: 16px;
     background-image: url("../img/icon-tick.svg");
     background-repeat: no-repeat;
-  }
-}
-
-.form-programm__add input[type="checkbox"]:focus + .form-programm__checkbox-indicator {
-  &::after {
-    box-shadow: 0 0 5px 3px lightblue;
   }
 }
 
@@ -528,7 +514,7 @@
   .form-programm__area[placeholder]:active {
     border: 1px solid @gray;
 
-    box-shadow: 0 0 0 1px @gray, 0 0 6px 4px lightblue;
+    box-shadow: 0 0 0 1px @gray;
     transition: all 0.2s ease-in-out;
   }
 
@@ -732,7 +718,7 @@
     box-sizing: border-box;
   }
 
-  .form-programm__flex--add {
+  .form-programm__field--add {
     position: relative;
 
     display: flex;
@@ -742,7 +728,7 @@
     width: 100%;
   }
 
-  .form-programm__flex--add .form-programm__heading {
+  .form-programm__field--add .form-programm__heading {
     position: relative;
 
     width: 100%;
@@ -1053,7 +1039,7 @@
     padding-top: 7px;
   }
 
-  .form-programm__flex--add {
+  .form-programm__field--add {
     margin-top: 40px;
 
     &::after {
@@ -1065,7 +1051,7 @@
     }
   }
 
-  .form-programm__flex--add .form-programm__heading {
+  .form-programm__field--add .form-programm__heading {
     position: relative;
 
     width: 100%;
@@ -1105,11 +1091,10 @@
     padding-left: 0;
     padding-right: 0;
 
-    justify-content: space-between;
+    justify-content: flex-start;
 
     width: 100%;
   }
-
 
   .form-programm__title3 {
     width: 100%;
@@ -1118,10 +1103,21 @@
   }
 
   .form-programm__add {
-    width: 20%;
+    width: calc(25% - 60px);
 
     .mapa();
     margin-bottom: 40px;
+    margin-left: 80px;
+
+    box-sizing: border-box;
+  }
+
+  .form-programm__add:first-child {
+    margin-left: 0;
+  }
+
+  .form-programm__add:nth-child(4n+1) {
+    margin-left: 0;
   }
 
   .form-programm__button-flex {
